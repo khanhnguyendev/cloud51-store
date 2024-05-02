@@ -9,6 +9,11 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.39.1",
+    "next-sanity": "^7.1.4",
+    "sanity": "^3.39.1",
+    "styled-components": "^6.1.8",
 		"@nextui-org/button": "^2.0.31",
 		"@nextui-org/code": "^2.0.27",
 		"@nextui-org/input": "^2.1.21",
