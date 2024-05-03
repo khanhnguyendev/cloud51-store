@@ -1,12 +1,26 @@
-import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import { Card, CardHeader, CardBody } from "@nextui-org/card";
+import Image from "next/image";
 
 export default function Home() {
+  const categories = [
+    {
+      name: "Iphone",
+      image: "/assets/images/iphone-thumbnail.png",
+      link: "/iphone",
+    },
+    {
+      name: "Macbook",
+      image: "/assets/images/macbook-thumbnail.png",
+      link: "/macbook",
+    },
+    {
+      name: "Ipad",
+      image: "/assets/images/ipad-thumbnail.png",
+      link: "/ipad",
+    },
+  ];
+
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="inline-block max-w-lg text-center justify-center">
@@ -26,38 +40,26 @@ export default function Home() {
         </h2>
       </div>
 
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          href={siteConfig.navItems[1].href}
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-        >
-          Iphone
-        </Link>
-        <Link
-          isExternal
-          href={siteConfig.navItems[2].href}
-          className={buttonStyles({
-            color: "secondary",
-            radius: "full",
-            variant: "shadow",
-          })}
-        >
-          Macbook
-        </Link>
+      <div className="flex flex-col mt-10 md:flex-row gap-3">
+        {categories.map((category) => (
+          <a key={category.link} href={category.link}>
+            <Card className="py-4 w-[200px] h-[200px]">
+              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                <h4 className="font-bold text-large">{category.name}</h4>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt={category.name}
+                  className="object-cover rounded-xl"
+                  src={category.image}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </CardBody>
+            </Card>
+          </a>
+        ))}
       </div>
-
-      {/* <div className="mt-8">
-        <Snippet hideSymbol hideCopyButton variant="flat">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
-      </div> */}
     </section>
   );
 }

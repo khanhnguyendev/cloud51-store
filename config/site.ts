@@ -10,12 +10,16 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Iphone",
+      label: "iPhone",
       href: "/iphone",
     },
     {
       label: "Macbook",
       href: "/macbook",
+    },
+    {
+      label: "iPad",
+      href: "/ipad",
     },
     {
       label: "About",

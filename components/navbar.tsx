@@ -28,6 +28,7 @@ import {
 } from "@/components/icons";
 
 import { Logo } from "@/components/icons";
+import Image from "next/image";
 
 export const Navbar = () => {
   const searchInput = (
@@ -56,7 +57,12 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
+            <Image
+              alt="Cloud51"
+              src="/assets/cloud51-logo.png"
+              width={100}
+              height={100}
+            />
             <p className="font-bold text-inherit">Cloud51</p>
           </NextLink>
         </NavbarBrand>
