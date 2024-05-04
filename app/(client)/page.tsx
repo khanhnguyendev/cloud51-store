@@ -1,30 +1,37 @@
+import Tabs from "@/components/Tabs";
 import { title, subtitle } from "@/components/primitives";
-import { Card, CardHeader, CardBody } from "@nextui-org/card";
-import Image from "next/image";
+import { client } from "@/sanity/lib/client";
+import { Product } from "@/utils/interface";
 
-export default function Home() {
-  const categories = [
-    {
-      name: "Iphone",
-      image: "/assets/images/iphone-thumbnail.png",
-      link: "/iphone",
+async function getProducts() {
+  const query = `*[_type == "product"] {
+    _id,
+    title,
+    slug,
+    serial,
+    price,
+    "imageUrl": image.asset->url,
+    tag[]->{
+      _id, 
+      name, 
+      slug
     },
-    {
-      name: "Macbook",
-      image: "/assets/images/macbook-thumbnail.png",
-      link: "/macbook",
-    },
-    {
-      name: "Ipad",
-      image: "/assets/images/ipad-thumbnail.png",
-      link: "/ipad",
-    },
-  ];
+    vendor[]->{
+      _id, 
+      name, 
+      slug
+    }
+  }`;
+  return await client.fetch(query);
+}
+
+export default async function Home() {
+  const products: Product[] = await getProducts();
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+    <section className="flex flex-col items-center justify-center gap-4 py-3 md:py-5">
       <div className="inline-block max-w-lg text-center justify-center">
-        <h1 className={title({ color: "violet" })}>Cloud51 Store&nbsp;</h1>
+        <h1 className={title({ color: "pink" })}>Cloud51 Store&nbsp;</h1>
         <br />
         <h1 className={title()}>Trả trước 49% không cần góp qua bank</h1>
       </div>
@@ -40,25 +47,8 @@ export default function Home() {
         </h2>
       </div>
 
-      <div className="flex flex-col mt-10 md:flex-row gap-3">
-        {categories.map((category) => (
-          <a key={category.link} href={category.link}>
-            <Card className="py-4 w-[200px] h-[200px]">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <h4 className="font-bold text-large">{category.name}</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt={category.name}
-                  className="object-cover rounded-xl"
-                  src={category.image}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </CardBody>
-            </Card>
-          </a>
-        ))}
+      <div className="flex flex-col mt-10 gap-3 w-full">
+        <Tabs products={products} />
       </div>
     </section>
   );

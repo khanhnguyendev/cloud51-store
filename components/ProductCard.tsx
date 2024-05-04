@@ -24,17 +24,17 @@ interface ProductCardProps {
 const ProductCard = ({ products }: ProductCardProps) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+  const handleButtonClick = () => {
+    window.open("https://zalo.me/0888393339", "_blank");
+  };
+
   return (
     <>
       {products.map((product) => (
         <div key={product._id}>
           <Card className="h-full grid">
             <CardHeader className="flex flex-1 flex-col h-full">
-              <h4 className="font-bold text-large">
-                {product.title}
-                {product.title}
-                {product.title}
-              </h4>
+              <h4 className="font-bold text-large">{product.title}</h4>
             </CardHeader>
             <CardBody className="h-full flex flex-col gap-5 justify-start items-center">
               <Image
@@ -60,34 +60,19 @@ const ProductCard = ({ products }: ProductCardProps) => {
               {(onClose) => (
                 <>
                   <ModalHeader className="flex flex-col gap-1">
-                    Modal Title
+                    {product.title}
                   </ModalHeader>
                   <ModalBody>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nullam pulvinar risus non risus hendrerit venenatis.
-                      Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nullam pulvinar risus non risus hendrerit venenatis.
-                      Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                    </p>
-                    <p>
-                      Magna exercitation reprehenderit magna aute tempor
-                      cupidatat consequat elit dolor adipisicing. Mollit dolor
-                      eiusmod sunt ex incididunt cillum quis. Velit duis sit
-                      officia eiusmod Lorem aliqua enim laboris do dolor
-                      eiusmod. Et mollit incididunt nisi consectetur esse
-                      laborum eiusmod pariatur proident Lorem eiusmod et. Culpa
-                      deserunt nostrud ad veniam.
+                      {product.description ||
+                        "Vui lòng liên hệ để nhận ưu đãi!!"}
                     </p>
                   </ModalBody>
                   <ModalFooter>
                     <Button color="danger" variant="light" onPress={onClose}>
                       Close
                     </Button>
-                    <Button color="primary" onPress={onClose}>
+                    <Button color="primary" onPress={handleButtonClick}>
                       Liên hệ
                     </Button>
                   </ModalFooter>

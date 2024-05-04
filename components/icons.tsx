@@ -242,3 +242,25 @@ export const TagPrice: React.FC<IconSvgProps> = (props) => {
     </svg>
   );
 };
+
+export const IphoneIcon: React.FC<IconSvgProps> = (props) => {
+  const { width, height = 30 } = props;
+
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      height={height}
+      role="img"
+      viewBox="0 0 24 24"
+      width={width}
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 18H4V6H20V18ZM12 2C12.6 2 13 2.4 13 3C13 3.6 12.6 4 12 4C11.4 4 11 3.6 11 3C11 2.4 11.4 2 12 2Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
