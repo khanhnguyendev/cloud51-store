@@ -10,6 +10,7 @@ async function getProducts() {
     slug,
     serial,
     price,
+    detail,
     "imageUrl": image.asset->url,
     tag[]->{
       _id, 

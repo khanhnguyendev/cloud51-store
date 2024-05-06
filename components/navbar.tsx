@@ -31,11 +31,6 @@ export const Navbar = () => {
         inputWrapper: "bg-default-100",
         input: "text-sm",
       }}
-      endContent={
-        <Kbd className="hidden lg:inline-block" keys={["command"]}>
-          K
-        </Kbd>
-      }
       labelPlacement="outside"
       placeholder="Search..."
       startContent={
@@ -56,7 +51,7 @@ export const Navbar = () => {
               width={100}
               height={100}
             />
-            <p className="font-bold text-inherit">Cloud51</p>
+            <p className="font-bold text-inherit text-pink-600">Cloud51</p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>

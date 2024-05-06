@@ -5,7 +5,7 @@ export interface Product {
   price: number;
   status: string;
   excerpt: string;
-  description: any;
+  detail: string;
   imageUrl: string;
   tags: Array<Tag>;
   vendors: Array<Vendor>;

@@ -49,7 +49,7 @@ const ProductCard = ({ products }: ProductCardProps) => {
               <span className="flex text-lg font-bold text-red-500">
                 <TagPrice /> {product.price.toLocaleString()} VND
               </span>
-              <Button color="primary" onPress={onOpen}>
+              <Button color="danger" onPress={onOpen}>
                 Chi Tiết
               </Button>
             </CardFooter>
@@ -64,15 +64,14 @@ const ProductCard = ({ products }: ProductCardProps) => {
                   </ModalHeader>
                   <ModalBody>
                     <p>
-                      {product.description ||
-                        "Vui lòng liên hệ để nhận ưu đãi!!"}
+                      {product.detail || "Vui lòng liên hệ để nhận ưu đãi!!"}
                     </p>
                   </ModalBody>
                   <ModalFooter>
                     <Button color="danger" variant="light" onPress={onClose}>
                       Close
                     </Button>
-                    <Button color="primary" onPress={handleButtonClick}>
+                    <Button color="danger" onPress={handleButtonClick}>
                       Liên hệ
                     </Button>
                   </ModalFooter>

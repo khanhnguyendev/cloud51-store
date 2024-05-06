@@ -39,22 +39,10 @@ export const product = {
       validation: (Rule: Rule) => Rule.required().error("Image is required"),
     },
     {
-      name: "description",
-      title: "Description",
+      name: "detail",
+      title: "Detail",
       type: "text",
     },
-    // {
-    //   name: "description",
-    //   title: "Description",
-    //   type: "array",
-    //   of: [
-    //     { type: "block" },
-    //     {
-    //       type: "image",
-    //       fields: [{ type: "text", name: "alt", title: "Alt text" }],
-    //     },
-    //   ],
-    // },
     {
       name: "price",
       title: "Price",

@@ -2,10 +2,11 @@
 
 import { Button } from "@nextui-org/button";
 import React, { useState } from "react";
-import { Image } from "@nextui-org/image";
 import IphonePage from "./IphonePage";
 import { Product } from "@/utils/interface";
-import { IphoneIcon } from "./icons";
+import { SlScreenSmartphone } from "react-icons/sl";
+import { RiMacbookLine } from "react-icons/ri";
+import { TbDeviceIpad } from "react-icons/tb";
 
 type Props = {
   products: Product[];
@@ -24,36 +25,22 @@ const Tabs = ({ products }: Props) => {
       <div className="flex justify-center gap-5">
         <Button
           onClick={() => handleTabClick("iphone")}
-          className={`w-[150px] h-[60px] py-2 px-4 ${activeTab === "iphone" ? "bg-blue-500" : "bg-blue-200"} text-white dark:bg-blue-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-blue-600 dark:focus:bg-blue-400`}
-          // startContent={<IphoneIcon />}
+          className={`w-[150px] h-[60px] py-2 px-4 ${activeTab === "iphone" ? "bg-pink-500" : "bg-pink-200"} text-white dark:bg-pink-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-pink-600 dark:focus:bg-pink-400`}
+          startContent={<SlScreenSmartphone />}
         >
           <span className="text-base">iPhone</span>
         </Button>
         <Button
           onClick={() => handleTabClick("macbook")}
-          className={`w-[150px] h-[60px] py-2 px-4 ${activeTab === "macbook" ? "bg-blue-500" : "bg-blue-200"} text-white dark:bg-blue-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-blue-600 dark:focus:bg-blue-400`}
-          // startContent={
-          //   <Image
-          //     src="/assets/images/macbook.svg"
-          //     height={50}
-          //     width={50}
-          //     alt="macbook"
-          //   />
-          // }
+          className={`w-[150px] h-[60px] py-2 px-4 ${activeTab === "macbook" ? "bg-pink-500" : "bg-pink-200"} text-white dark:bg-pink-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-pink-600 dark:focus:bg-pink-400`}
+          startContent={<RiMacbookLine />}
         >
           <span className="text-base">Macbook</span>
         </Button>
         <Button
           onClick={() => handleTabClick("ipad")}
-          className={`w-[150px] h-[60px] py-2 px-4 ${activeTab === "ipad" ? "bg-blue-500" : "bg-blue-200"} text-white dark:bg-blue-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-blue-600 dark:focus:bg-blue-400`}
-          // startContent={
-          //   <Image
-          //     src="/assets/images/ipad.svg"
-          //     height={50}
-          //     width={50}
-          //     alt="ipad"
-          //   />
-          // }
+          className={`w-[150px] h-[60px] py-2 px-4 ${activeTab === "ipad" ? "bg-pink-500" : "bg-pink-200"} text-white dark:bg-pink-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-pink-600 dark:focus:bg-pink-400`}
+          startContent={<TbDeviceIpad />}
         >
           <span className="text-base">iPad</span>
         </Button>

@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@nextui-org/button": "^2.0.31",
 		"@nextui-org/card": "^2.0.28",
+		"@nextui-org/chip": "^2.0.28",
 		"@nextui-org/code": "^2.0.27",
 		"@nextui-org/image": "^2.0.27",
 		"@nextui-org/input": "^2.1.21",
@@ -43,6 +44,7 @@
 		"postcss": "8.4.38",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"react-icons": "^5.2.0",
 		"sanity": "^3.39.1",
 		"styled-components": "^6.1.8",
 		"tailwind-variants": "^0.1.20",
