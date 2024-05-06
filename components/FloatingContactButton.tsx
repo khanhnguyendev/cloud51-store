@@ -15,7 +15,7 @@ const FloatingContactButton = () => {
         </button>
         <button
           className="flex flex-row justify-center items-center gap-3 bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-full shadow-lg"
-          onClick={() => (window.location.href = "tel:888393339")}
+          onClick={() => window.open("https://zalo.me/0888393339", "_blank")}
         >
           <SiZalo />
         </button>
