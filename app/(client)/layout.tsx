@@ -6,7 +6,7 @@ import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
 import clsx from "clsx";
 import FloatingContactButton from "@/components/FloatingContactButton";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
