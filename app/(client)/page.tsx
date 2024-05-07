@@ -30,7 +30,7 @@ export default async function Home() {
   const products: Product[] = await getProducts();
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-3 md:py-5">
+    <section className="flex flex-col items-center justify-center py-3">
       <div className="inline-block max-w-lg text-center justify-center">
         <h1 className={title({ color: "pink" })}>Cloud51 Store&nbsp;</h1>
         <br />

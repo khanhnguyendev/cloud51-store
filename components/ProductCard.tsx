@@ -39,14 +39,14 @@ const ProductCard = ({ products }: ProductCardProps) => {
             <CardBody className="h-full flex flex-col gap-5 justify-start items-center">
               <Image
                 alt={product.title}
-                className="object-cover rounded-xl"
+                className="object-cover rounded-xl hover:scale-110 translate-x-4 ease-in-out skew-y-10 md:transform-none"
                 src={product.imageUrl}
                 width={200}
                 height={200}
               />
             </CardBody>
-            <CardFooter className="flex flex-1 flex-col h-full">
-              <span className="flex text-lg font-bold text-red-500">
+            <CardFooter className="flex flex-1 flex-col h-full gap-4">
+              <span className="flex text-lg font-bold text-red-500 gap-2">
                 <TagPrice /> {product.price.toLocaleString()} VND
               </span>
               <Button color="danger" onPress={onOpen}>
