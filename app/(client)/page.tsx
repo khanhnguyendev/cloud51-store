@@ -2,6 +2,7 @@ import Tabs from "@/components/Tabs";
 import { title, subtitle } from "@/components/primitives";
 import { client } from "@/sanity/lib/client";
 import { Product } from "@/utils/interface";
+import { animate } from "framer-motion";
 
 async function getProducts() {
   const query = `*[_type == "product"] {
@@ -34,7 +35,12 @@ export default async function Home() {
       <div className="inline-block max-w-lg text-center justify-center">
         <h1 className={title({ color: "pink" })}>Cloud51 Store&nbsp;</h1>
         <br />
-        <h1 className={title()}>Trả trước 49% không cần góp qua bank</h1>
+        <br />
+        <h1 className={title()}>
+          Trả trước{" "}
+          <span className={title({ color: "pink" })}>&ldquo;49%&rdquo;</span>{" "}
+          không cần góp qua bank
+        </h1>
       </div>
       <div>
         <h2 className={subtitle({ class: "mt-4" })}>

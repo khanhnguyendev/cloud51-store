@@ -2,11 +2,13 @@
 
 import { Button } from "@nextui-org/button";
 import React, { useState } from "react";
-import IphonePage from "./IphonePage";
 import { Product } from "@/utils/interface";
 import { SlScreenSmartphone } from "react-icons/sl";
 import { RiMacbookLine } from "react-icons/ri";
 import { TbDeviceIpad } from "react-icons/tb";
+import IPhone from "./IPhone";
+import Macbook from "./Macbook";
+import IPad from "./IPad";
 
 type Props = {
   products: Product[];
@@ -14,6 +16,12 @@ type Props = {
 
 const Tabs = ({ products }: Props) => {
   const [activeTab, setActiveTab] = useState("iphone");
+
+  const filterProducts = (type: string) => {
+    return products.filter((product) =>
+      product.tag.some((tag) => tag.slug.current === type)
+    );
+  };
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
@@ -51,9 +59,13 @@ const Tabs = ({ products }: Props) => {
 
       {/* Tab Content */}
       <div className="p-4 mt-10">
-        {activeTab === "iphone" && <IphonePage products={products} />}
-        {activeTab === "macbook" && <span>Chưa có sản phẩm...</span>}
-        {activeTab === "ipad" && <span>Chưa có sản phẩm...</span>}
+        {activeTab === "iphone" && (
+          <IPhone products={filterProducts("iphone")} />
+        )}
+        {activeTab === "macbook" && (
+          <Macbook products={filterProducts("macbook")} />
+        )}
+        {activeTab === "ipad" && <IPad products={filterProducts("ipad")} />}
       </div>
     </div>
   );

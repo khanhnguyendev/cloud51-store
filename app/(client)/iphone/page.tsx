@@ -29,14 +29,24 @@ async function getProducts() {
 export default async function IphonePage() {
   const products: Product[] = await getProducts();
 
+  const filterProducts = (type: string) => {
+    return products.filter((product) =>
+      product.tag.some((tag) => tag.slug.current === type)
+    );
+  };
+
   return (
     <>
-      <div className="mb-5">
-        <h1 className={title()}>Iphone</h1>
+      <div className="mb-10">
+        <h1 className={title()}>iPhone</h1>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
-        <ProductCard products={products} />
+        {products.length === 0 ? (
+          <p>Chưa có sản phẩm...</p>
+        ) : (
+          <ProductCard products={filterProducts("iphone")} />
+        )}
       </div>
     </>
   );

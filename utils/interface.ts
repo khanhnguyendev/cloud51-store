@@ -7,8 +7,8 @@ export interface Product {
   excerpt: string;
   detail: string;
   imageUrl: string;
-  tags: Array<Tag>;
-  vendors: Array<Vendor>;
+  tag: Array<Tag>;
+  vendor: Array<Vendor>;
 }
 
 export interface Tag {
