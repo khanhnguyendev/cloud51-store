@@ -1,8 +1,8 @@
-import Tabs from "@/components/Tabs";
-import { title, subtitle } from "@/components/primitives";
+import BannerImage from "@/components/BannerImage";
+import ProductTabs from "@/components/ProductTabs";
+import SloganImage from "@/components/SloganImage";
 import { client } from "@/sanity/lib/client";
 import { Product } from "@/utils/interface";
-import { animate } from "framer-motion";
 
 async function getProducts() {
   const query = `*[_type == "product"] {
@@ -33,29 +33,12 @@ export default async function Home() {
   return (
     <section className="flex flex-col items-center justify-center py-3">
       <div className="inline-block max-w-lg text-center justify-center">
-        <h1 className={title({ color: "pink" })}>Cloud51 Store&nbsp;</h1>
-        <br />
-        <br />
-        <h1 className={title()}>
-          Trả trước{" "}
-          <span className={title({ color: "pink" })}>&ldquo;49%&rdquo;</span>{" "}
-          không cần góp qua bank
-        </h1>
-      </div>
-      <div>
-        <h2 className={subtitle({ class: "mt-4" })}>
-          📢 Có gói bảo hành 1 năm, an tâm sử dụng
-        </h2>
-        <h2 className={subtitle({ class: "mt-4" })}>
-          🧑‍🎓 Tặng Voucher 300k cho học sinh, sinh viên
-        </h2>
-        <h2 className={subtitle({ class: "mt-4" })}>
-          ♻️ Chính sách đổi trả bù trừ hợp lý để Update.
-        </h2>
+        <SloganImage />
+        <BannerImage />
       </div>
 
       <div className="flex flex-col mt-10 gap-3 w-full">
-        <Tabs products={products} />
+        <ProductTabs products={products} />
       </div>
     </section>
   );
