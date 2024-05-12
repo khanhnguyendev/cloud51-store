@@ -1,5 +1,5 @@
-import { client } from "@/sanity/lib/client";
 import { Banner } from "@/utils/interface";
+import { Image } from "@nextui-org/image";
 
 import {
   Carousel,
@@ -8,23 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Image } from "@nextui-org/image";
 
-async function getBannerImages() {
-  const query = `*[_type == "banner" && isActive == true] {
-    _id,
-    title,
-    "imageUrl": image.asset->url,
-    url,
-    isActive
-  }`;
-  return await client.fetch(query);
+interface Props {
+  banners: Banner[];
 }
 
-const BannerImage = async () => {
-  const banners: Banner[] = await getBannerImages();
-  console.log(banners);
-
+const BannerImage = ({ banners }: Props) => {
   return (
     <Carousel className="max-w-screen-lg sm:w-4/5 mx-auto mb-5">
       <CarouselContent>

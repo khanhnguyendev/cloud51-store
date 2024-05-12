@@ -1,22 +1,11 @@
-import { client } from "@/sanity/lib/client";
 import { Slogan } from "@/utils/interface";
 import { Image } from "@nextui-org/image";
 
-async function getSloganImages() {
-  const query = `*[_type == "slogan" && isActive == true] {
-    _id,
-    title,
-    "imageUrl": image.asset->url,
-    url,
-    isActive
-  }`;
-  return await client.fetch(query);
+interface Props {
+  slogans: Slogan[];
 }
 
-const SloganImage = async () => {
-  const slogans: Slogan[] = await getSloganImages();
-  console.log(slogans);
-
+const SloganImage = ({ slogans }: Props) => {
   return (
     <>
       {slogans.map((slogan) => (
