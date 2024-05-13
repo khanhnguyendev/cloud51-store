@@ -1,5 +1,5 @@
 import BannerImage from "@/components/BannerImage";
-import ProductTabs from "@/components/ProductTabs";
+import ProductComponent from "@/components/ProductComponent";
 import SloganImage from "@/components/SloganImage";
 import { getBannerImages, getProducts, getSloganImages } from "@/utils/fetcher";
 
@@ -23,7 +23,7 @@ export default async function Home() {
       </div>
 
       <div className="flex flex-col mt-10 gap-3 w-full">
-        <ProductTabs products={products} />
+        <ProductComponent products={products} />
       </div>
     </section>
   );

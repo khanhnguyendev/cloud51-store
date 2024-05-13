@@ -26,6 +26,7 @@
 		"@nextui-org/tabs": "^2.0.29",
 		"@nextui-org/theme": "2.2.0",
 		"@radix-ui/react-slot": "^1.0.2",
+		"@radix-ui/react-tabs": "^1.0.4",
 		"@react-aria/ssr": "^3.9.2",
 		"@react-aria/visually-hidden": "^3.8.10",
 		"@sanity/image-url": "^1.0.2",
