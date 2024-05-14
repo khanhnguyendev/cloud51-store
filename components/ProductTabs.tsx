@@ -31,30 +31,23 @@ const Tabs = ({ products }: Props) => {
     <div className="mx-auto p-8 w-full">
       {/* Tabs */}
       <div className="flex justify-center gap-2">
-        <Button
-          onClick={() => handleTabClick("iphone")}
-          className={`h-[50px] py-2 px-4 ${activeTab === "iphone" ? "bg-pink-500" : "bg-pink-200"} text-white dark:bg-pink-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-pink-600 dark:focus:bg-pink-400`}
-          startContent={<SlScreenSmartphone />}
-          style={{ minWidth: "120px" }}
-        >
-          <span className="text-base">iPhone</span>
-        </Button>
-        <Button
-          onClick={() => handleTabClick("macbook")}
-          className={`h-[50px] py-2 px-4 ${activeTab === "macbook" ? "bg-pink-500" : "bg-pink-200"} text-white dark:bg-pink-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-pink-600 dark:focus:bg-pink-400`}
-          startContent={<RiMacbookLine />}
-          style={{ minWidth: "120px" }}
-        >
-          <span className="text-base">Macbook</span>
-        </Button>
-        <Button
-          onClick={() => handleTabClick("ipad")}
-          className={`h-[50px] py-2 px-4 ${activeTab === "ipad" ? "bg-pink-500" : "bg-pink-200"} text-white dark:bg-pink-600 dark:text-white dark:hover:bg-opacity-40 dark:bg-opacity-50 focus:outline-none focus:bg-pink-600 dark:focus:bg-pink-400`}
-          startContent={<TbDeviceIpad />}
-          style={{ minWidth: "100px" }}
-        >
-          <span className="text-base">iPad</span>
-        </Button>
+        {[
+          { label: "iPhone", icon: <SlScreenSmartphone />, value: "iphone" },
+          { label: "Macbook", icon: <RiMacbookLine />, value: "macbook" },
+          { label: "iPad", icon: <TbDeviceIpad />, value: "ipad" },
+        ].map((tab) => (
+          <Button
+            key={tab.value}
+            onClick={() => handleTabClick(tab.value)}
+            className={`h-[50px] py-2 px-4 min-w-[120px] text-white focus:outline-none transition-colors duration-300 dark:bg-opacity-80
+        ${activeTab === tab.value ? "bg-pink-500" : "bg-pink-200"} 
+        ${activeTab === tab.value ? "focus:bg-pink-600 dark:focus:bg-pink-400" : ""}
+      `}
+            startContent={tab.icon}
+          >
+            <span className="text-base">{tab.label}</span>
+          </Button>
+        ))}
       </div>
 
       {/* Tab Content */}
