@@ -21,7 +21,7 @@ export default async function Home() {
         <SloganImage slogans={slogans} />
       </div>
 
-      <div className="flex flex-col mt-10 gap-3 w-full">
+      <div className="flex flex-col mt-10 gap-3 lg:w-4/5">
         <ProductComponent products={products} banners={banners} />
       </div>
     </section>

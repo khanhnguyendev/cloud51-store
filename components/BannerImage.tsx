@@ -15,21 +15,18 @@ interface Props {
 
 const BannerImage = ({ banners }: Props) => {
   return (
-    <Carousel className="max-w-screen-lg sm:w-4/5 mx-auto mb-5">
-      <CarouselContent>
+    <>
+      <div className="mt-10 lg:p-10">
         {banners.map((banner) => (
-          <CarouselItem key={banner._id}>
-            <Image
-              src={banner.url}
-              alt={banner.title}
-              className="w-full h-auto"
-            />
-          </CarouselItem>
+          <Image
+            key={banner._id}
+            src={banner.url}
+            alt={banner.title}
+            className="w-full h-auto"
+          />
         ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+      </div>
+    </>
   );
 };
 

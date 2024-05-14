@@ -14,7 +14,7 @@ const ProductComponent = ({ products, banners }: Props) => {
   return (
     <>
       <Tabs defaultValue="loan">
-        <TabsList className="grid w-full grid-cols-2 bg-gray-200 dark:bg-gray-800">
+        <TabsList className="grid grid-cols-2 bg-gray-200 dark:bg-gray-800">
           <TabsTrigger value="loan">Vay</TabsTrigger>
           <TabsTrigger value="installment">Trả góp</TabsTrigger>
         </TabsList>
