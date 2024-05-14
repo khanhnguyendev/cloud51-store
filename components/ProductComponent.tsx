@@ -1,14 +1,16 @@
 import ProductTabs from "@/components/ProductTabs";
-import { Product } from "@/utils/interface";
+import { Banner, Product } from "@/utils/interface";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+import BannerImage from "./BannerImage";
 
 interface Props {
   products: Product[];
+  banners: Banner[];
 }
 
-const ProductComponent = ({ products }: Props) => {
+const ProductComponent = ({ products, banners }: Props) => {
   return (
     <>
       <Tabs defaultValue="loan">
@@ -17,18 +19,10 @@ const ProductComponent = ({ products }: Props) => {
           <TabsTrigger value="installment">Trả góp</TabsTrigger>
         </TabsList>
         <TabsContent value="loan">
-          <Card>
-            <CardContent className="space-y-2">
-              <ProductTabs products={products} />
-            </CardContent>
-          </Card>
+          <BannerImage banners={banners} />
         </TabsContent>
         <TabsContent value="installment">
-          <Card>
-            <CardContent className="space-y-2">
-              <ProductTabs products={products} />
-            </CardContent>
-          </Card>
+          <ProductTabs products={products} />
         </TabsContent>
       </Tabs>
     </>

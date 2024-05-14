@@ -3,7 +3,15 @@
 import { Product } from "@/utils/interface";
 import React from "react";
 
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+// import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import {
@@ -32,24 +40,32 @@ const ProductCard = ({ products }: ProductCardProps) => {
     <>
       {products.map((product) => (
         <div key={product._id}>
-          <Card className="h-full grid">
-            <CardHeader className="flex flex-1 flex-col h-full">
-              <h4 className="font-bold text-large">{product.title}</h4>
+          <Card className="max-w-sm mx-auto shadow-lg rounded-lg overflow-hidden">
+            <CardHeader className="p-4 ">
+              <CardTitle className="h-[75px] overflow-hidden text-sm lg:text-base font-semibold text-center text-gray-900 dark:text-gray-100">
+                {product.title}
+              </CardTitle>
             </CardHeader>
-            <CardBody className="h-full flex flex-col gap-5 justify-start items-center">
+            <CardContent className="flex justify-center">
               <Image
                 alt={product.title}
-                className="object-cover rounded-xl hover:scale-110 translate-x-4 ease-in-out skew-y-10 md:transform-none"
+                className="object-cover rounded-xl transform transition-transform duration-500 hover:scale-105"
                 src={product.imageUrl}
-                width={200}
-                height={200}
+                width={100}
+                height={100}
               />
-            </CardBody>
-            <CardFooter className="flex flex-1 flex-col h-full gap-4">
-              <span className="flex text-lg font-bold text-red-500 gap-2">
-                <TagPrice /> {product.price.toLocaleString()} VND
-              </span>
-              <Button color="danger" onPress={onOpen}>
+            </CardContent>
+            <CardFooter className="flex flex-col items-center p-4">
+              <div className="flex items-center text-xs font-bold text-red-500 mb-2">
+                <TagPrice />
+                <span className="ml-1">{product.price.toLocaleString()}</span>
+                <span className="ml-1">VND</span>
+              </div>
+              <Button
+                color="danger"
+                onPress={onOpen}
+                className="text-white text-xs"
+              >
                 Chi Tiết
               </Button>
             </CardFooter>

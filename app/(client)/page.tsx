@@ -19,11 +19,10 @@ export default async function Home() {
     <section className="flex flex-col items-center justify-center py-3">
       <div className="inline-block max-w-lg text-center justify-center">
         <SloganImage slogans={slogans} />
-        <BannerImage banners={banners} />
       </div>
 
       <div className="flex flex-col mt-10 gap-3 w-full">
-        <ProductComponent products={products} />
+        <ProductComponent products={products} banners={banners} />
       </div>
     </section>
   );
