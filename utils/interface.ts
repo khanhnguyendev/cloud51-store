@@ -23,7 +23,7 @@ export interface Vendor {
   slug: { current: string };
 }
 
-export interface Slogan {
+export interface Banner {
   _id: string;
   title: string;
   imageUrl: string;

@@ -1,4 +1,4 @@
-import { Slogan } from "@/utils/interface";
+import { Banner } from "@/utils/interface";
 import { Image } from "@nextui-org/image";
 
 import {
@@ -9,20 +9,20 @@ import {
 } from "@/components/ui/carousel";
 
 interface Props {
-  slogans: Slogan[];
+  banners: Banner[];
 }
 
-const SloganImage = ({ slogans }: Props) => {
+const BannerImage = ({ banners }: Props) => {
   return (
     <>
       <Carousel className="w-4/5 lg:w-full mx-auto mb-5">
         <CarouselContent>
-          {slogans.map((slogan) => (
+          {banners.map((banner) => (
             <div
-              key={slogan._id}
+              key={banner._id}
               className="max-w-screen-lg w-full mx-auto mb-5"
             >
-              <Image src={slogan.imageUrl} alt={slogan.title} />
+              <Image src={banner.imageUrl} alt={banner.title} />
             </div>
           ))}
         </CarouselContent>
@@ -33,4 +33,4 @@ const SloganImage = ({ slogans }: Props) => {
   );
 };
 
-export default SloganImage;
+export default BannerImage;

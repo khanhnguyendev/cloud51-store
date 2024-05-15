@@ -1,25 +1,25 @@
 import { Rule } from "sanity";
 
-export const slogan = {
-  name: "slogan",
-  title: "Slogan Image (970px x 250px)",
+export const banner = {
+  name: "banner",
+  title: "Banner Image",
   type: "document",
 
   fields: [
     {
       name: "title",
-      title: "Slogan Title",
+      title: "Banner Title",
       type: "string",
     },
     {
       name: "image",
-      title: "Slogan Image",
+      title: "Banner Image",
       type: "image",
       options: {
         hotspot: true,
       },
       validation: (Rule: Rule) =>
-        Rule.required().error("Slogan Image is required"),
+        Rule.required().error("Banner Image is required"),
     },
     {
       name: "url",

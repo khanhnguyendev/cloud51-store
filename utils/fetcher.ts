@@ -23,8 +23,8 @@ export async function getProducts() {
   return await client.fetch(query);
 }
 
-export async function getSloganImages() {
-  const query = `*[_type == "slogan" && isActive == true] {
+export async function getBannerImages() {
+  const query = `*[_type == "banner" && isActive == true] {
     _id,
     title,
     "imageUrl": image.asset->url,

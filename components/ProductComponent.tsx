@@ -11,7 +11,6 @@ interface Props {
 }
 
 const ProductComponent = ({ products, event }: Props) => {
-  console.log(event);
   return (
     <>
       <Tabs defaultValue="loan" className="w-full">
