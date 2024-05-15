@@ -12,7 +12,8 @@ async function fetchData() {
     getBannerImages(),
     getLatestEventImage(),
   ]);
-  return { products, banners, event };
+
+  return { products, banners, event, next: { revalidate: 60 } };
 }
 
 export default async function Home() {
