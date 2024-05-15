@@ -31,7 +31,7 @@ export interface Slogan {
   isActive: boolean;
 }
 
-export interface Banner {
+export interface Event {
   _id: string;
   title: string;
   imageUrl: string;

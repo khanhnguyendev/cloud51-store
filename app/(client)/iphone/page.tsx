@@ -1,7 +1,9 @@
-import { title } from "@/components/primitives";
 import { client } from "@/sanity/lib/client";
 import { Product } from "@/utils/interface";
+
+import { title } from "@/components/primitives";
 import ProductCard from "@/components/ProductCard";
+import { Chip } from "@nextui-org/react";
 
 async function getProducts() {
   const query = `*[_type == "product"] {
@@ -43,7 +45,15 @@ export default async function IphonePage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
         {products.length === 0 ? (
-          <p>Chưa có sản phẩm...</p>
+          <Chip
+            variant="shadow"
+            classNames={{
+              base: "bg-gradient-to-br from-indigo-500 to-pink-500 border-small border-white/50 shadow-pink-500/30",
+              content: "drop-shadow shadow-black text-white",
+            }}
+          >
+            Chưa có sản phẩm...
+          </Chip>
         ) : (
           <ProductCard products={filterProducts("iphone")} />
         )}

@@ -1,17 +1,6 @@
 "use client";
 
-import { Product } from "@/utils/interface";
 import React from "react";
-
-// import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import {
@@ -22,7 +11,15 @@ import {
   ModalFooter,
   useDisclosure,
 } from "@nextui-org/modal";
+import { Product } from "@/utils/interface";
 
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { TagPrice } from "@/components/icons";
 
 interface ProductCardProps {

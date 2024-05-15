@@ -1,25 +1,25 @@
 import { Rule } from "sanity";
 
-export const banner = {
-  name: "banner",
-  title: "Banner Image (Square)",
+export const event = {
+  name: "event",
+  title: "Event Image (Square)",
   type: "document",
 
   fields: [
     {
       name: "title",
-      title: "Banner Title",
+      title: "Event Title",
       type: "string",
     },
     {
       name: "image",
-      title: "Banner Image",
+      title: "Event Image",
       type: "image",
       options: {
         hotspot: true,
       },
       validation: (Rule: Rule) =>
-        Rule.required().error("Banner Image is required"),
+        Rule.required().error("Event Image is required"),
     },
     {
       name: "url",

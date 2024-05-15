@@ -1,15 +1,17 @@
-import { Banner, Product } from "@/utils/interface";
+import { Event, Product } from "@/utils/interface";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import BannerImage from "@/components/BannerImage";
 import ProductTabs from "@/components/ProductTabs";
+import EventImage from "@/components/EventImage";
+import { Chip } from "@nextui-org/react";
 
 interface Props {
   products: Product[];
-  banners: Banner[];
+  event: Event;
 }
 
-const ProductComponent = ({ products, banners }: Props) => {
+const ProductComponent = ({ products, event }: Props) => {
+  console.log(event);
   return (
     <>
       <Tabs defaultValue="loan" className="w-full">
@@ -31,7 +33,19 @@ const ProductComponent = ({ products, banners }: Props) => {
           value="loan"
           className="p-5 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg"
         >
-          <BannerImage banners={banners} />
+          {event ? (
+            <EventImage event={event} />
+          ) : (
+            <Chip
+              variant="shadow"
+              classNames={{
+                base: "bg-gradient-to-br from-indigo-500 to-pink-500 border-small border-white/50 shadow-pink-500/30",
+                content: "drop-shadow shadow-black text-white",
+              }}
+            >
+              Đang cập nhật giá...
+            </Chip>
+          )}
         </TabsContent>
         <TabsContent
           value="installment"

@@ -1,19 +1,22 @@
-import BannerImage from "@/components/BannerImage";
 import ProductComponent from "@/components/ProductComponent";
 import SloganImage from "@/components/SloganImage";
-import { getBannerImages, getProducts, getSloganImages } from "@/utils/fetcher";
+import {
+  getLatestEventImage,
+  getProducts,
+  getSloganImages,
+} from "@/utils/fetcher";
 
 async function fetchData() {
-  const [products, slogans, banners] = await Promise.all([
+  const [products, slogans, event] = await Promise.all([
     getProducts(),
     getSloganImages(),
-    getBannerImages(),
+    getLatestEventImage(),
   ]);
-  return { products, slogans, banners };
+  return { products, slogans, event };
 }
 
 export default async function Home() {
-  const { products, slogans, banners } = await fetchData();
+  const { products, slogans, event } = await fetchData();
 
   return (
     <section className="flex flex-col items-center justify-center py-3">
@@ -22,7 +25,7 @@ export default async function Home() {
       </div>
 
       <div className="flex flex-col mt-10 gap-3 lg:w-4/5">
-        <ProductComponent products={products} banners={banners} />
+        <ProductComponent products={products} event={event} />
       </div>
     </section>
   );
