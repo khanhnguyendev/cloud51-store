@@ -38,7 +38,7 @@ const ProductCard = ({ products }: ProductCardProps) => {
       {products.map((product) => (
         <div key={product._id}>
           <Card className="max-w-sm mx-auto shadow-lg rounded-lg overflow-hidden transition-transform transform-gpu duration-300 hover:scale-105 hover:shadow-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-            <CardHeader className="p-4 flex justify-center items-center">
+            <CardHeader className="p-3 flex justify-center items-center">
               <CardTitle className="h-[75px] overflow-hidden text-sm lg:text-base font-semibold text-center text-gray-900 dark:text-gray-100">
                 {product.title}
               </CardTitle>
@@ -53,7 +53,7 @@ const ProductCard = ({ products }: ProductCardProps) => {
               />
             </CardContent>
             <CardFooter className="flex flex-col items-center p-4">
-              <div className="flex items-center text-xs xl:text-base font-bold text-red-500 dark:text-red-400 mb-2">
+              <div className="flex items-center text-xs 2xl:text-base font-bold text-red-500 dark:text-red-400 mb-2">
                 <TagPrice />
                 <span className="ml-1">{product.price.toLocaleString()}</span>
                 <span className="ml-1">VND</span>

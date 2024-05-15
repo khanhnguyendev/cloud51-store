@@ -39,13 +39,13 @@ const Tabs = ({ products }: Props) => {
           <Button
             key={tab.value}
             onClick={() => handleTabClick(tab.value)}
-            className={`h-[50px] py-2 px-4 min-w-[120px] text-white focus:outline-none transition-colors duration-300 dark:bg-opacity-80
+            className={`h-[50px] py-2 px-4 min-w-[100px] text-white text-xs 2xl:text-base focus:outline-none transition-colors duration-300 dark:bg-opacity-80
         ${activeTab === tab.value ? "bg-pink-500" : "bg-pink-200"} 
         ${activeTab === tab.value ? "focus:bg-pink-600 dark:focus:bg-pink-400" : ""}
       `}
             startContent={tab.icon}
           >
-            <span className="text-base">{tab.label}</span>
+            <span className="text-xs 2xl:text-base">{tab.label}</span>
           </Button>
         ))}
       </div>
