@@ -1,14 +1,6 @@
 import { Banner } from "@/utils/interface";
 import { Image } from "@nextui-org/image";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
 interface Props {
   banners: Banner[];
 }
