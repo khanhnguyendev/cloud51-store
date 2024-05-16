@@ -54,7 +54,7 @@ const ProductCard = ({ products }: ProductCardProps) => {
             </CardContent>
             <CardFooter className="flex flex-col items-center p-4">
               <div className="flex items-center text-xs 2xl:text-base font-bold text-red-500 dark:text-red-400 mb-2">
-                <TagPrice />
+                {/* <TagPrice /> */}
                 <span className="ml-1">{product.price.toLocaleString()}</span>
                 <span className="ml-1">VND</span>
               </div>
