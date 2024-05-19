@@ -6,7 +6,7 @@ import ProductCard from "@/components/ProductCard";
 import { Chip } from "@nextui-org/react";
 
 async function getProducts() {
-  const query = `*[_type == "product"] {
+  const query = `*[_type == "sanPham"] {
     _id,
     title,
     slug,

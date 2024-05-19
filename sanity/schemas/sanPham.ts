@@ -1,8 +1,8 @@
-import { Rule, validation } from "sanity";
+import { Rule } from "sanity";
 
-export const product = {
-  name: "product",
-  title: "Product",
+export const sanPham = {
+  name: "sanPham",
+  title: "SanPham",
   type: "document",
 
   fields: [
@@ -13,11 +13,10 @@ export const product = {
       validation: (Rule: Rule) => Rule.required().error("Title is required"),
     },
     {
-      name: "serial",
-      title: "Serial Number",
+      name: "priority",
+      title: "Độ ưu tiên (Nhỏ hiển thị cuối)",
       type: "string",
-      validation: (Rule: Rule) =>
-        Rule.required().error("Serial Number is required"),
+      validation: (Rule: Rule) => Rule.required().error("Priority is required"),
     },
     {
       name: "slug",
@@ -50,37 +49,8 @@ export const product = {
       validation: (Rule: Rule) => Rule.required().error("Price is required"),
     },
     {
-      name: "discountPrice",
-      title: "Discount Price",
-      type: "number",
-    },
-    {
-      name: "onSale",
-      title: "On Sale",
-      type: "boolean",
-    },
-    {
-      name: "stock",
-      title: "Stock",
-      type: "number",
-      validation: (Rule: Rule) => Rule.required().error("Stock is required"),
-    },
-    {
-      name: "status",
-      title: "Status (New, Seal, 99%, 97%, ...)",
-      type: "string",
-      validation: (Rule: Rule) => Rule.required().error("Status is required"),
-    },
-    {
-      name: "vendor",
-      title: "Vendor (Apple, Samsung, ...)",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "vendor" }] }],
-      validation: (Rule: Rule) => Rule.required().error("Vendor are required"),
-    },
-    {
       name: "tag",
-      title: "Tag (Iphone, Samsung, ...)",
+      title: "Tag (iPhone12, iPhone11, ...)",
       type: "array",
       of: [{ type: "reference", to: [{ type: "tag" }] }],
       validation: (Rule: Rule) => Rule.required().error("Tag are required"),

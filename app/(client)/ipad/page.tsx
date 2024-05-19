@@ -4,7 +4,7 @@ import { Product } from "@/utils/interface";
 import ProductCard from "@/components/ProductCard";
 
 async function getProducts() {
-  const query = `*[_type == "product"] {
+  const query = `*[_type == "sanPham"] {
     _id,
     title,
     slug,

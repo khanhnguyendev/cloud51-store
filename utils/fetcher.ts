@@ -1,11 +1,10 @@
 import { client } from "@/sanity/lib/client";
 
 export async function getProducts() {
-  const query = `*[_type == "product"] {
+  const query = `*[_type == "sanPham"] {
     _id,
     title,
     slug,
-    serial,
     price,
     detail,
     "imageUrl": image.asset->url,
@@ -14,11 +13,6 @@ export async function getProducts() {
       name, 
       slug
     },
-    vendor[]->{
-      _id, 
-      name, 
-      slug
-    }
   }`;
   return await client.fetch(query);
 }
