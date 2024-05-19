@@ -15,7 +15,7 @@ export const sanPham = {
     {
       name: "priority",
       title: "Độ ưu tiên (Nhỏ hiển thị cuối)",
-      type: "string",
+      type: "number",
       validation: (Rule: Rule) => Rule.required().error("Priority is required"),
     },
     {
