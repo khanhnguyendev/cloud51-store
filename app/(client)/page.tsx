@@ -1,19 +1,19 @@
 import ProductComponent from "@/components/ProductComponent";
 import BannerImage from "@/components/BannerImage";
 import {
-  getLatestEventImage,
-  getProducts,
-  getBannerImages,
+  fetchBannerImage,
+  fetchLatestEvent,
+  fetchProducts,
 } from "@/utils/fetcher";
 
 async function fetchData() {
   const [products, banners, event] = await Promise.all([
-    getProducts(),
-    getBannerImages(),
-    getLatestEventImage(),
+    fetchProducts(),
+    fetchBannerImage(),
+    fetchLatestEvent(),
   ]);
 
-  return { products, banners, event, next: { revalidate: 60 } };
+  return { products, banners, event };
 }
 
 export default async function Home() {

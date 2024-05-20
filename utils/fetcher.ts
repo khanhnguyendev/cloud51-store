@@ -1,6 +1,17 @@
-import { client } from "@/sanity/lib/client";
+import { Banner, Event, Product } from "./interface";
 
-export async function getProducts() {
+async function fetchData(query: string) {
+  const res = await fetch(
+    process.env.SANITY_BASE_URL + "?query=" + encodeURIComponent(query),
+    {
+      next: { revalidate: 60 },
+    }
+  );
+  const data = await res.json();
+  return data.result;
+}
+
+export async function fetchProducts(): Promise<Product[]> {
   const query = `*[_type == "sanPham"] {
     _id,
     title,
@@ -14,10 +25,10 @@ export async function getProducts() {
       slug
     },
   }`;
-  return await client.fetch(query);
+  return await fetchData(query);
 }
 
-export async function getBannerImages() {
+export async function fetchBannerImage(): Promise<Banner[]> {
   const query = `*[_type == "banner" && isActive == true] {
     _id,
     title,
@@ -25,16 +36,16 @@ export async function getBannerImages() {
     url,
     isActive
   }`;
-  return await client.fetch(query);
+  return await fetchData(query);
 }
 
-export async function getLatestEventImage() {
+export async function fetchLatestEvent(): Promise<Event> {
   const query = `*[_type == "event" && isActive == true] | order(_createdAt desc)[0] {
     _id,
     title,
     "imageUrl": image.asset->url,
     url,
     isActive
-}`;
-  return await client.fetch(query);
+  }`;
+  return await fetchData(query);
 }
