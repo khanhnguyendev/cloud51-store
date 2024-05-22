@@ -39,11 +39,11 @@ const ProductCard = ({ products }: ProductCardProps) => {
         <div key={product._id}>
           <Card className="max-w-sm mx-auto shadow-lg rounded-lg overflow-hidden transition-transform transform-gpu duration-300 hover:scale-105 hover:shadow-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
             <CardHeader className="p-3 flex justify-center items-center">
-              <CardTitle className="h-[75px] overflow-hidden text-sm lg:text-base font-semibold text-center text-gray-900 dark:text-gray-100">
+              <CardTitle className="h-[50px] lg:h-[75px] overflow-hidden text-sm lg:text-base font-semibold text-center text-gray-900 dark:text-gray-100">
                 {product.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="flex justify-center items-center">
+            <CardContent className="flex justify-center items-center max-h-[100px]">
               <Image
                 alt={product.title}
                 className="object-cover rounded-xl transform transition-transform duration-500 hover:scale-110"
