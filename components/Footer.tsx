@@ -2,7 +2,7 @@ import { Chip } from "@nextui-org/chip";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gradient-to-r from-blue-500 to-pink-500 text-white py-6">
+    <footer className="w-full bg-gradient-to-r from-red-400 to-red-500 text-white py-6">
       <div className="container mx-auto flex flex-col items-center justify-center">
         <p className="text-lg font-bold mb-3">
           &copy; 2024 <span className="font-bold">Cloud51</span> Store
@@ -13,7 +13,7 @@ const Footer = () => {
             <Chip
               variant="shadow"
               classNames={{
-                base: "bg-gradient-to-br from-indigo-500 to-pink-500 border-small border-white/50 shadow-pink-500/30",
+                base: "bg-gradient-to-br from-indigo-500 to-red-500 border-small border-white/50 shadow-red-500/30",
                 content: "drop-shadow shadow-black text-white",
               }}
             >
@@ -25,7 +25,7 @@ const Footer = () => {
             <Chip
               variant="shadow"
               classNames={{
-                base: "bg-gradient-to-br from-indigo-500 to-pink-500 border-small border-white/50 shadow-pink-500/30",
+                base: "bg-gradient-to-br from-indigo-500 to-red-500 border-small border-white/50 shadow-red-500/30",
                 content: "drop-shadow shadow-black text-white",
               }}
             >

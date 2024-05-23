@@ -17,13 +17,13 @@ const ProductComponent = ({ products, event }: Props) => {
         <TabsList className="flex justify-center bg-gray-200 dark:bg-gray-800 rounded-2xl">
           <TabsTrigger
             value="installment"
-            className="w-1/2 rounded-2xl text-center font-medium text-gray-950 dark:text-gray-200 transition-colors duration-300 hover:text-pink-500 dark:hover:text-pink-400"
+            className="w-1/2 rounded-2xl text-center font-medium text-gray-950 dark:text-gray-200 transition-colors duration-300 hover:text-red-500 dark:hover:text-red-400"
           >
             Trả góp
           </TabsTrigger>
           <TabsTrigger
             value="loan"
-            className="w-1/2 rounded-2xl text-center font-medium text-gray-950 dark:text-gray-200 transition-colors duration-300 hover:text-pink-500 dark:hover:text-pink-400"
+            className="w-1/2 rounded-2xl text-center font-medium text-gray-950 dark:text-gray-200 transition-colors duration-300 hover:text-red-500 dark:hover:text-red-400"
           >
             Vay
           </TabsTrigger>
@@ -44,7 +44,7 @@ const ProductComponent = ({ products, event }: Props) => {
             <Chip
               variant="shadow"
               classNames={{
-                base: "bg-gradient-to-br from-indigo-500 to-pink-500 border-small border-white/50 shadow-pink-500/30",
+                base: "bg-gradient-to-br from-indigo-500 to-red-500 border-small border-white/50 shadow-red-500/30",
                 content: "drop-shadow shadow-black text-white",
               }}
             >

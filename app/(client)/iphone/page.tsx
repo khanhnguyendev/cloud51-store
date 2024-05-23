@@ -48,7 +48,7 @@ export default async function IphonePage() {
           <Chip
             variant="shadow"
             classNames={{
-              base: "bg-gradient-to-br from-indigo-500 to-pink-500 border-small border-white/50 shadow-pink-500/30",
+              base: "bg-gradient-to-br from-indigo-500 to-red-500 border-small border-white/50 shadow-red-500/30",
               content: "drop-shadow shadow-black text-white",
             }}
           >

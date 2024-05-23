@@ -7,7 +7,6 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
 
 import { link as linkStyles } from "@nextui-org/theme";
@@ -49,9 +48,7 @@ export const Navbar = () => {
               width={100}
               height={100}
             />
-            <p className="font-bold text-inherit text-pink-600 animate-bounce">
-              Cloud51
-            </p>
+            <p className="font-bold text-inherit text-red-600">Cloud51</p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
