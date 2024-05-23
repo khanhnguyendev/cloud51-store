@@ -21,11 +21,11 @@ export default async function Home() {
 
   return (
     <section className="flex flex-col items-center justify-center py-3">
-      <div className="inline-block max-w-lg text-center justify-center">
+      <div className="-mx-6 lg:mx-0 py-6 text-center justify-center">
         <BannerImage banners={banners} />
       </div>
 
-      <div className="flex flex-col mt-10 gap-3 lg:w-4/5">
+      <div className="flex flex-col mt-10 gap-3 lg:w-4/5 w-full">
         <ProductComponent products={products} event={event} />
       </div>
     </section>

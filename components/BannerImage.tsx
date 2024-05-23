@@ -15,13 +15,16 @@ interface Props {
 const BannerImage = ({ banners }: Props) => {
   return (
     <>
-      <Carousel className="w-4/5 lg:w-full mx-auto mb-5">
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        orientation="vertical"
+        className="w-full"
+      >
         <CarouselContent>
           {banners.map((banner) => (
-            <div
-              key={banner._id}
-              className="max-w-screen-lg w-full mx-auto mb-5"
-            >
+            <div key={banner._id} className="max-w-screen-lg w-full">
               <Image src={banner.imageUrl} alt={banner.title} />
             </div>
           ))}

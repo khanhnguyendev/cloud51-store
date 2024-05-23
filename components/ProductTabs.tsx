@@ -28,7 +28,7 @@ const Tabs = ({ products }: Props) => {
   };
 
   return (
-    <div className="mx-auto p-8 w-full">
+    <div className="mx-auto lg:p-8 px-4 py-8 w-full">
       {/* Tabs */}
       <div className="flex justify-center gap-2">
         {[
@@ -51,7 +51,7 @@ const Tabs = ({ products }: Props) => {
       </div>
 
       {/* Tab Content */}
-      <div className="p-4 mt-10">
+      <div className="p-0 lg:p-4 mt-10">
         {activeTab === "iphone" && (
           <IPhoneTab products={filterProducts("iphone")} />
         )}

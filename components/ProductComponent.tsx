@@ -30,7 +30,7 @@ const ProductComponent = ({ products, event }: Props) => {
         </TabsList>
         <TabsContent
           value="installment"
-          className="w-full p-5 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg"
+          className="w-full bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-lg"
         >
           <ProductTabs products={products} />
         </TabsContent>
