@@ -6,9 +6,9 @@ import { Product } from "@/utils/interface";
 import { SlScreenSmartphone } from "react-icons/sl";
 import { RiMacbookLine } from "react-icons/ri";
 import { TbDeviceIpad } from "react-icons/tb";
-import IPhone from "./IPhone";
-import Macbook from "./Macbook";
-import IPad from "./IPad";
+import IPhoneTab from "@/components/IPhoneTab";
+import Macbook from "@/components/Macbook";
+import IPad from "@/components/IPad";
 
 type Props = {
   products: Product[];
@@ -53,7 +53,7 @@ const Tabs = ({ products }: Props) => {
       {/* Tab Content */}
       <div className="p-4 mt-10">
         {activeTab === "iphone" && (
-          <IPhone products={filterProducts("iphone")} />
+          <IPhoneTab products={filterProducts("iphone")} />
         )}
         {activeTab === "macbook" && (
           <Macbook products={filterProducts("macbook")} />

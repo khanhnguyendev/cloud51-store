@@ -20,7 +20,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { TagPrice } from "@/components/icons";
 
 interface ProductCardProps {
   products: Product[];

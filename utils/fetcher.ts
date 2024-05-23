@@ -15,6 +15,7 @@ export async function fetchProducts(): Promise<Product[]> {
   const query = `*[_type == "sanPham"] {
     _id,
     title,
+    priority,
     slug,
     price,
     detail,
