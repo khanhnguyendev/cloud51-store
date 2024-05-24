@@ -44,7 +44,7 @@ export const Navbar = () => {
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image
               alt="Cloud51"
-              src="/assets/cloud51-logo.jpg"
+              src="/assets/cloud51-logo.png"
               width={50}
               height={50}
             />
