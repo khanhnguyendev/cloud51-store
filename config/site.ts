@@ -2,8 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Cloud51 Store",
-  description:
-    "Trả trước 49% không cần góp qua bank | Chỉ có tại Cloud51 Store",
+  description: "Mở khoá iCloud | Bán iPhone góp qua iCloud | Vay - Góp iCloud",
   navItems: [
     {
       label: "Home",
