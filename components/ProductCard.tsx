@@ -68,7 +68,7 @@ const ProductCard = ({ products }: ProductCardProps) => {
               <Button
                 color="danger"
                 onPress={() => handleProductClick(product)}
-                className="text-white text-xs bg-red-500 dark:bg-red-600 dark:hover:bg-red-500"
+                className="text-white text-xs bg-orange-500 dark:bg-orange-600 dark:hover:bg-orange-500"
               >
                 Chi Tiết
               </Button>

@@ -40,8 +40,8 @@ const Tabs = ({ products }: Props) => {
             key={tab.value}
             onClick={() => handleTabClick(tab.value)}
             className={`h-[50px] py-2 px-4 min-w-[100px] text-white text-xs 2xl:text-base focus:outline-none transition-colors duration-300 dark:bg-opacity-80
-        ${activeTab === tab.value ? "bg-red-500" : "bg-red-200"} 
-        ${activeTab === tab.value ? "focus:bg-red-600 dark:focus:bg-red-400" : ""}
+        ${activeTab === tab.value ? "bg-orange-500" : "bg-orange-200"} 
+        ${activeTab === tab.value ? "focus:bg-orange-600 dark:focus:bg-orange-400" : ""}
       `}
             startContent={tab.icon}
           >

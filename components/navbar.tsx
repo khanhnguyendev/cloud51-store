@@ -44,11 +44,13 @@ export const Navbar = () => {
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image
               alt="Cloud51"
-              src="/assets/cloud51-logo.png"
-              width={100}
-              height={100}
+              src="/assets/cloud51-logo.jpg"
+              width={50}
+              height={50}
             />
-            <p className="font-bold text-inherit text-red-600">Cloud51</p>
+            <p className="font-bold text-2xl text-inherit text-orange-600">
+              Cloud 51
+            </p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
