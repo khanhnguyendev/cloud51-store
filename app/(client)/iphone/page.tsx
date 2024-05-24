@@ -4,6 +4,7 @@ import { Product } from "@/utils/interface";
 import { title } from "@/components/primitives";
 import ProductCard from "@/components/ProductCard";
 import { Chip } from "@nextui-org/react";
+import NoProduct from "@/components/NoProduct";
 
 async function getProducts() {
   const query = `*[_type == "sanPham"] {
@@ -43,17 +44,9 @@ export default async function IphonePage() {
         <h1 className={title()}>iPhone</h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
         {products.length === 0 ? (
-          <Chip
-            variant="shadow"
-            classNames={{
-              base: "bg-gradient-to-br from-orange-300 to-orange-500 border-small border-white/50 shadow-orange-500/30",
-              content: "drop-shadow shadow-black text-white",
-            }}
-          >
-            Chưa có sản phẩm...
-          </Chip>
+          <NoProduct />
         ) : (
           <ProductCard products={filterProducts("iphone")} />
         )}
