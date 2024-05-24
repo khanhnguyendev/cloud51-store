@@ -20,8 +20,8 @@ export default async function Home() {
   const { products, banners, event } = await fetchData();
 
   return (
-    <section className="flex flex-col items-center justify-center py-3">
-      <div className="-mx-6 lg:mx-0 py-6 text-center justify-center">
+    <section className="flex flex-col items-center justify-center py-5">
+      <div className="-mx-6 lg:mx-0 flex items-center text-center justify-center">
         <BannerImage banners={banners} />
       </div>
 

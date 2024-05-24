@@ -16,23 +16,23 @@ interface Props {
 }
 
 const BannerImage = ({ banners }: Props) => {
+  console.log(banners);
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
   return (
     <>
-      <Carousel
-        plugins={[plugin.current]}
-        opts={{
-          align: "center",
-        }}
-        className="w-full"
-      >
+      <Carousel plugins={[plugin.current]} className="w-full">
         <CarouselContent>
           {banners.map((banner) => (
             <CarouselItem key={banner._id}>
-              <div className="max-w-screen-lg w-full mx-auto">
-                <Image src={banner.imageUrl} alt={banner.title} />
+              <div className="max-w-screen-lg w-full flex items-center justify-center">
+                <Image
+                  alt="Image"
+                  height={225}
+                  src={banner.imageUrl}
+                  width={400}
+                />
               </div>
             </CarouselItem>
           ))}
