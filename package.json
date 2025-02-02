@@ -24,7 +24,7 @@
 		"@nextui-org/switch": "^2.0.28",
 		"@nextui-org/system": "2.1.0",
 		"@nextui-org/tabs": "^2.0.29",
-		"@nextui-org/theme": "2.2.0",
+		"@nextui-org/theme": "^2.2.0",
 		"@radix-ui/react-slot": "^1.0.2",
 		"@radix-ui/react-tabs": "^1.0.4",
 		"@react-aria/ssr": "^3.9.2",
